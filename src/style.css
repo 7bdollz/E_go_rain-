@@ -1,0 +1,88 @@
+/* Rounded corners for imageholder background image */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: rgb(3, 45, 3);
+  width: 100vw;
+}
+
+ul {
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+li {
+  cursor: pointer;
+  margin-left: 30px;
+  font-weight: 800;
+}
+
+li:hover {
+  color: white;
+  transition: 1s;
+}
+
+header {
+  display: flex;
+  height: 10vh;
+}
+
+#imageholder {
+  height: 70vh;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  columns: gray;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+#logo {
+  margin-top: 20px;
+  color: white;
+}
+
+#heading {
+  text-align: center;
+  font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2em;
+}
+
+#para {
+  text-align: center;
+  font-size: 1em;
+}
+
+#imageholder {
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+  height: 80vh;
+}
+
+footer {
+  color: rgb(34, 90, 51);
+}

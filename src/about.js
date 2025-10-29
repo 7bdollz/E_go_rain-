@@ -1,0 +1,3 @@
+let about = () => {
+  let b;
+};

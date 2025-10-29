@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+# This specifies when the workflow should run.
+# It will run on pushes to the 'main' branch.
+on:
+  push:
+    branches:
+      - main
+  # This allows you to manually run the workflow from the Actions tab.
+  workflow_dispatch:
+
+# A workflow is made up of one or more jobs.
+jobs:
+  build-and-deploy:
+    # This job will run on a clean Ubuntu virtual machine.
+    runs-on: ubuntu-latest
+
+    # The steps are the individual commands that will be executed.
+    steps:
+      # Step 1: Checks out your repository on the runner.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Installs Node.js on the runner.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18" # You can change this to your preferred Node.js version.
+
+      # Step 3: Installs your project dependencies from package.json.
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Runs the webpack build command.
+      # This is the most important step. It will create the 'docs' folder with
+      # your bundled files.
+      - name: Build project
+        run: npm run build
+
+      # Step 5: Deploys the 'docs' folder to GitHub Pages.
+      # This action automatically handles the deployment process for you.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          # Make sure this matches the folder in your GitHub Pages settings.
