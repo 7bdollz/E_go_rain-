@@ -24,7 +24,7 @@ body {
   /* Full-screen layout */
   min-height: 100vh;
   margin: 0;
-  padding: 10px;
+  
   text-transform: capitalize;
 
   /* Background gradient */
@@ -37,11 +37,6 @@ body {
   /* Text styling */
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  
   
 }
 
@@ -121,4 +116,10 @@ footer{
 #time{
   font-size: 1.2rem;
   margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  #content {
+    grid-template-columns: 1fr;
+  }
 }
